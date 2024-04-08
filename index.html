@@ -23,6 +23,7 @@
             <li><a href="SL Wild Life Intro.html">Introduction</a></li>
             <li><a href="Dep of Wild Life Conv.html">Conservation</a></li>
             <li><a href="SL Leopard.html">leopard</a></li>
+            <li><a href="login.html">Login</a></li>
             <li><div class="dropdown">
                 <button class="dropbtn">
                     <li><a href="Animals of SL.html">Animals</a></li>
@@ -51,74 +52,67 @@
       <li><a class="menu__item" href="Animals of SL.html">Animals</a></li>
       <li><a class="menu__item" href="yala.html">Yala</a></li>
       <li><a class="menu__item" href="wilpattu.html">Wilpattu</a></li>
+      <li><a class="menu__item" href="login.html">Login</a></li>
     </ul>
   </div>
 </header>
   <main>
     <section1>
       <div class="intro">
-        <h1>Sri Lankan Wild Life</h1>
-        <p>Sri Lanka is a biodiversity hotspot, home to a stunning array of wildlife that will leave you breathless. From the gentle giants of the Asian elephant to the elusive Sri Lankan leopard, the island nation offers a unique opportunity to witness some of the world's most fascinating creatures.
-          Explore lush rainforests teeming with exotic birds, reptiles, and mammals. Take a boat safari on a tranquil lake and spot crocodiles basking in the sun or beobachten pods of playful dolphins frolicking in the waves. Hike through verdant hills and encounter majestic herds of wild elephants grazing in the grasslands.
-          Sri Lanka's commitment to conservation ensures that you can enjoy these wildlife encounters responsibly. Many national parks and protected areas offer guided safaris and tours led by experienced naturalists who will educate you about the animals and their habitat. You can also support local conservation efforts by volunteering with wildlife organizations or choosing eco-friendly travel options.
-        </p>
-        <div class="container">
-          <div class="box">
-
-          </div>
-        </div>
+        <h1 id="hero-title"> </h1>
+        <p id="descrip"> </p>
       </div>
     </section1>
     <section2>
       <div class="list1">
-        <h2>Places to go</h2>
-        <ol>
-          <li>Yala National Park</li>
-          <li>Sinharaja Forest Reseve</li>
-          <li>Udawalawa National Park</li>
-          <li>Horton Plains</li>
-          <li>Wilpattu National Park</li>
-          <li>Minneriya National Park</li>
+        <h2 id="list-title"></h2>
+        <ol id="parks">
         </ol>
       </div>
       <div class="container">
         <div class="box">
-          <img src="assets/img/The complete guide to visiting Yala National Park in Sri Lanka, including safari tips, ethical information, where to stay, leopard spottings and more!.jpg" alt="hatch1" width="" height="500">
-          <img src="assets/img/download.jpg" alt="hatch1" width="" height="500">     
+          <div class="homeimg" id="B1"></div>
+          <div class="homeimg" id="B2"></div>    
         </div>
       </div>
       <div class="list1">
-        <p>
-          Sri Lanka is known for its rich biodiversity and diverse ecosystems, making it a great destination for wildlife enthusiasts. Here are some notable wildlife places to visit in Sri Lanka
-        </p>
+        <p id="descrip1"></p>
       </div>
     </section2>
     <section2>
       <div class="list1">
-        <h2>Iconic Animals In Sri Lanka</h2>
-        <ul>
-          <li>Leopard</li>
-          <li>Sri Lankan elephant</li>
-          <li>Purple Monkey</li>
-          <li>Sri Lankan junglefowl</li>
-          <li>Peacocks</li>
-        </ul>
+        <h2 id="animalsListHead"></h2>
+        <ul id="iconic-animals"></ul>
       </div>
       <div class="container">
         <div class="box">
-          <img src="assets/img/Holiday with Wild Elephants in Sri Lanka.jpg" alt="hatch1" width="" height="450">
-          <img src="assets/img/52 Places to Go in 2015 (Published 2015).jpg" alt="hatch1" width="" height="450">
-          <img src="assets/img/Sri Lanka_ A Dream Honeymoon Destination.jpg" alt="hatch1" width="" height="450">
+          <div class="Boxx1" id="88"></div>
+          <div class="Boxx1" id="89"></div>
+          <div class="Boxx1" id="90"></div>
         </div>
       </div>
       <div class="list1">
-        <p>
-          Sri Lanka is home to a diverse range of wildlife, and several iconic animals contribute to the country's rich biodiversity. Here are some of the iconic animals found in Sri Lanka
-        </p>
+        <p id="descrip2"></p>
       </div>
     </section2>
 
   </main>
+  <footer>
+    <p>Subscribe to our newsletter for updates:</p>
+    <form class="newsletter-form" id="newsletterForm">
+      <input
+        class="newsletter-input"
+        type="email"
+        id="email"
+        name="email"
+        placeholder="Your email address"
+        required
+      />
+      <button class="newsletter-button" type="submit">Subscribe</button>
+    </form>
+  </footer>
+  
+
   <section class="footer">
     <div class="social">
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -142,10 +136,42 @@
       <li>
         <a href="Animals of SL.html">Animals</a>
       </li>
+      <li>
+        <a href="login.html">Login</a>
+      </li>
       <p class="copyright">
         Future Coders @ 2023
       </p>
     </ul>
   </section>
+  <script src="./index.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const newsletterForm = document.getElementById("newsletterForm");
+
+      newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById("email").value;
+
+       
+        saveEmailToLocalStorage(email);
+
+        
+        document.getElementById("email").value = "";
+
+        alert("Thank you for subscribing to our newsletter!");
+      });
+      function saveEmailToLocalStorage(email) {
+        let subscriptions =
+          JSON.parse(localStorage.getItem("subscriptions")) || [];
+        subscriptions.push(email);
+        localStorage.setItem(
+          "subscriptions",
+          JSON.stringify(subscriptions)
+        );
+      }
+    });
+  </script>
 </body>
 </html>

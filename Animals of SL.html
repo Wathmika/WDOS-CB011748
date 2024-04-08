@@ -23,6 +23,7 @@
           <li><a href="SL Wild Life Intro.html">Introduction</a></li>
           <li><a href="Dep of Wild Life Conv.html">Conservation</a></li>
           <li><a href="SL Leopard.html">leopard</a></li>
+          <li><a href="login.html">Login</a></li>
           <li><div class="dropdown">
               <button class="dropbtn">
                   <li><a href="Animals of SL.html">Animals</a></li>
@@ -51,29 +52,21 @@
       <li><a class="menu__item" href="Animals of SL.html">Animals</a></li>
       <li><a class="menu__item" href="yala.html">Yala</a></li>
       <li><a class="menu__item" href="wilpattu.html">Wilpattu</a></li>
+      <li><a class="menu__item" href="login.html">Login</a></li>
     </ul>
   </div>
 </header>
+<main>
 <div class="indanimals">
-  <h1>Indigenous Animals in SriLanka</h1>
+  <h1 id="indAnimalsHead"></h1>
   <div class="ind-about">
-    <p>
-      Sri Lanka is home to a rich array of indigenous animals that have adapted to the diverse ecosystems found on the island. These indigenous species include a variety of mammals, birds, reptiles, amphibians, and fish. Some examples include:
-    </p>
+    <p id="indaboutDescrip"></p>
   <section2>
     <div class="list1">
-      <ul>
-        <li>Toque Macaque (Macaca sinica)</li>
-        <li>Sri Lankan Sloth Bear (Melursus ursinus inornatus)</li>
-        <li>Purple-faced Langur (Semnopithecus vetulus)</li>
-        <li>Ceylonese Wood Pigeon (Columba torringtoni)</li>
-        <li>Hump-nosed Lizard (Lyriocephalus scutatus)</li>
-      </ul>
+      <ul id="ind-animalsList"></ul>
     </div>
   </section2>
-    <p>
-      These indigenous animals contribute to the unique biodiversity of Sri Lanka, and conservation efforts are essential to safeguard their habitats and ensure their long-term survival. Protected areas, national parks, and wildlife reserves play a crucial role in preserving the indigenous fauna of the island.
-    </p>
+    <p id="paradescrip1"></p>
   </div>
 </div>
 <div class="animalsbutton">
@@ -88,7 +81,21 @@
     <a href="wilpattu.html">Click Here</a>
   </button>
 </div>
-
+</main>
+<footer>
+  <p>Subscribe to our newsletter for updates:</p>
+  <form class="newsletter-form" id="newsletterForm">
+    <input
+      class="newsletter-input"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your email address"
+      required
+    />
+    <button class="newsletter-button" type="submit">Subscribe</button>
+  </form>
+</footer>
   <section class="footer">
     <div class="social">
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -112,10 +119,42 @@
       <li>
         <a href="Animals of SL.html">Animals</a>
       </li>
+      <li>
+        <a href="login.html">Login</a>
+      </li>
       <p class="copyright">
         Future Coders @ 2023
       </p>
     </ul>
   </section>
+  <script src="Animals of SL.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const newsletterForm = document.getElementById("newsletterForm");
+
+      newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById("email").value;
+
+        
+        saveEmailToLocalStorage(email);
+
+        
+        document.getElementById("email").value = "";
+
+        alert("Thank you for subscribing to our newsletter!");
+      });
+      function saveEmailToLocalStorage(email) {
+        let subscriptions =
+          JSON.parse(localStorage.getItem("subscriptions")) || [];
+        subscriptions.push(email);
+        localStorage.setItem(
+          "subscriptions",
+          JSON.stringify(subscriptions)
+        );
+      }
+    });
+  </script>
 </body>
 </html>

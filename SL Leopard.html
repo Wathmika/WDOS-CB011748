@@ -23,6 +23,7 @@
           <li><a href="SL Wild Life Intro.html">Introduction</a></li>
           <li><a href="Dep of Wild Life Conv.html">Conservation</a></li>
           <li><a href="SL Leopard.html">leopard</a></li>
+          <li><a href="login.html">Login</a></li>
           <li><div class="dropdown">
               <button class="dropbtn">
                   <li><a href="Animals of SL.html">Animals</a></li>
@@ -51,90 +52,50 @@
       <li><a class="menu__item" href="Animals of SL.html">Animals</a></li>
       <li><a class="menu__item" href="yala.html">Yala</a></li>
       <li><a class="menu__item" href="wilpattu.html">Wilpattu</a></li>
+      <li><a class="menu__item" href="login.html">Login</a></li>
     </ul>
   </div>
 </header>
+<main>
 <div class="leopardh1">
-  <h1>The Sri Lankan Leopard</h1>
-  <div class="leopard">
-    <img src="assets/img/Sri Lankan Leopard.jpg" alt="leopard" width="" height="600px">
-  </div>
+  <h1 id="leopardHead"></h1>
+  <div class="leopard" id="77"></div>
 </div>
 <div class="leopardlocations">
-  <h2>Where to spot leopards in sri lanka</h2>
+  <h2 id="leopardLoc"></h2>
   <br>
-  <h3>Yala National Park:</h3>
+  <h3 id="yalaNPHead"></h3>
   <div class="list2">
-    <ul>
-      <li>
-        Location: Yala National Park is situated in the southeastern part of Sri Lanka and is the second-largest national park in the country.
-      </li>
-      <li>Habitat: The park is known for its diverse ecosystems, including scrublands, forests, grasslands, and coastal areas. This variety of habitats provides an ideal environment for leopards.
-      </li>
-      <li>Leopard Sightings: Yala is renowned for its high concentration of leopards, and visitors have a good chance of spotting these elusive big cats, especially around areas like Block 1 and Block 5.
-      </li>
-    </ul>
+    <ul id="yalaList"></ul>
   </div>
-  <h3>Wilpattu National Park</h3>
+  <h3 id="wilpattuNPHead"></h3>
   <div class="list2">
-  <ul>
-    <li>
-      Location: Wilpattu National Park is located in the northwest of Sri Lanka, and it is the largest national park in the country.
-    </li>
-    <li>
-      Habitat: The park is characterized by a mix of natural lakes, scrublands, and dense forests. The diverse landscape provides suitable conditions for leopards to thrive.
-    </li>
-    <li>
-      Leopard Sightings: Wilpattu is known for its leopard population, and while sightings can be a bit more challenging due to the park's vast and dense nature, the experience of spotting a leopard in this pristine environment is rewarding.
-    </li>
-  </ul>
+  <ul id="wilpattuList"></ul>
 </div>
-<h3>Udawalawa National Park</h3>
+<h3 id="UdawalaweNPHead"></h3>
 <div class="list2">
-  <ul>
-    <li>
-      Location: Udawalawe National Park is situated in the southern part of Sri Lanka.
-    </li>
-    <li>
-      Habitat: The park is predominantly known for its large population of Asian elephants, but it also provides a habitat for leopards in its grasslands and scrublands.
-    </li>
-    <li>
-      Leopard Sightings: While Udawalawe is not as famous for leopard sightings as Yala or Wilpattu, visitors still have the opportunity to encounter leopards, making it a diverse wildlife destination.
-    </li>
-  </ul>
+  <ul id="UdawalaweList"></ul>
 </div>
 <section2>
 <div class="list2">
-  <h2>Key Threats to Leopards</h2>
+  <h2 id="threatList"></h2>
 </div>
   <div class="threat1">
-    <h3>Habitat Loss and Fragmentation</h3>
-    <P>
-      Threat: Rapid human population growth and expanding agricultural activities contribute to the loss and fragmentation of leopard habitats.
-    </P>
-    <p>
-      Consequences: Reduced availability of suitable habitat leads to increased human-wildlife conflict, as leopards may venture into human settlements in search of food.
-    </p>
-    <p>
-      Mechanisms: Conservation organizations work on habitat preservation, creating wildlife corridors, and promoting sustainable land-use practices to minimize habitat loss.
-    </P>
+    <h3 id="threat1Head"></h3>
+    <P id="p1"></P>
+    <p id="p2"></p>
+    <p id="p3"></P>
   </div>
     <div class="lepthreat1">
-      <img src="assets/img/lazy leopard - Scott Nyams.jpg" alt="lazy" width="" height="600px">
+      <div class="leopard" id="78"></div>
     </div>
   <div class="threat1">
-    <h3>Poaching and Illegal Wildlife Trade</h3>
-    <p>
-      Threat: Leopards are targeted for their skins, bones, and other body parts, driven by demand in illegal wildlife trade markets.
-    </p>
-    <p>
-      Consequences: Poaching poses a direct threat to leopard populations, leading to a decline in their numbers and disrupting the natural balance of ecosystems.
-    </p>
-    <p>
-      Mechanisms: Enhanced anti-poaching efforts, stricter law enforcement, and international collaboration to combat the illegal wildlife trade are crucial for protecting leopards.
-    </p>
+    <h3 id="threat2Head"></h3>
+    <p id="p4"></p>
+    <p id="p5"></p>
+    <p id="p6"></p>
     <div class="lepthreat2">
-      <img src="assets/img/poaching.jpg" alt="poaching" width="" height="400px">
+      <div class="leopard" id="79"></div>
     </div>
   </div>
 </section2>
@@ -144,7 +105,21 @@
     <a href="https://www.leopocon.org/">Click Here</a>
   </button>
 </div>
-
+</main>
+<footer>
+  <p>Subscribe to our newsletter for updates:</p>
+  <form class="newsletter-form" id="newsletterForm">
+    <input
+      class="newsletter-input"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your email address"
+      required
+    />
+    <button class="newsletter-button" type="submit">Subscribe</button>
+  </form>
+</footer>
   <section class="footer">
     <div class="social">
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -168,10 +143,42 @@
       <li>
         <a href="Animals of SL.html">Animals</a>
       </li>
+      <li>
+        <a href="login.html">Login</a>
+      </li>
       <p class="copyright">
         Future Coders @ 2023
       </p>
     </ul>
   </section>
+  <script src="SL Leopard.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const newsletterForm = document.getElementById("newsletterForm");
+
+      newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById("email").value;
+
+        
+        saveEmailToLocalStorage(email);
+
+        
+        document.getElementById("email").value = "";
+
+        alert("Thank you for subscribing to our newsletter!");
+      });
+      function saveEmailToLocalStorage(email) {
+        let subscriptions =
+          JSON.parse(localStorage.getItem("subscriptions")) || [];
+        subscriptions.push(email);
+        localStorage.setItem(
+          "subscriptions",
+          JSON.stringify(subscriptions)
+        );
+      }
+    });
+  </script>
 </body>
 </html>

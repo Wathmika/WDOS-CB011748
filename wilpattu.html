@@ -24,6 +24,7 @@
           <li><a href="SL Wild Life Intro.html">Introduction</a></li>
           <li><a href="Dep of Wild Life Conv.html">Conservation</a></li>
           <li><a href="SL Leopard.html">leopard</a></li>
+          <li><a href="login.html">Login</a></li>
           <li><div class="dropdown">
               <button class="dropbtn">
                   <li><a href="Animals of SL.html">Animals</a></li>
@@ -52,57 +53,56 @@
       <li><a class="menu__item" href="Animals of SL.html">Animals</a></li>
       <li><a class="menu__item" href="yala.html">Yala</a></li>
       <li><a class="menu__item" href="wilpattu.html">Wilpattu</a></li>
+      <li><a class="menu__item" href="login.html">Login</a></li>
     </ul>
   </div>
 </header>
+<main>
 <div class="wilpattumain">
   <div class="wilpattumainhead">
-    <h1>Wilpattu National Park</h1>
+    <h1 id="wilpattuHead"></h1>
   </div>
 </div>
 <div class="wilpattumainabout">
   <div class="aboutwilpattumain">
-  <h1>About Wilpattu National Park</h1>
-  <p>
-    Wilpattu sanctuary was decalred as a National Park in 1938, Wilpattu National Park is located on the west coast close to the historical city of Anuradhapura .The dry zone jungle is thickly grown. Wilpattu Natonal Park is home for many villus, or natural lakes which dot the landscape in the Wilpattu National Park. Except for two, These lakes contain rainwater, thus are important for resident and migratory water-birds.
-  </p>
+  <h1 id="aboutHead"></h1>
+  <p id="aboutDescrip1"></p>
   </div>
-  <div class="wilpattumap">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d252571.0709814398!2d80.0518306!3d8.4581819!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3afdac7787e4bc27%3A0xcdd9a0715dad187c!2sWilpattu%20National%20Park!5e0!3m2!1sen!2slk!4v1705256873966!5m2!1sen!2slk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
+  <div class="wilpattumap" id="wilpattuMap"></div>
 </div>
 <div class="wilpattuwild">
   <div class="wilpattuwildlife">
-    <h1>
-      Wildlife in the Wilpattu National Park
-    </h1>
-    <p>
-      There are approximately 30 species of mammals in the Wilpattu National Park which include the Sri Lankan Elephant, Sri Lankan Leopard, Lankan Sloth Bear, Sri, Spotted Deer, Buffalo, Sambar and Mongoose
-    </p>
+    <h1 id="wildlifeHead"></h1>
+    <p id="wildlifeDescrip"></p>
   </div>
   <div class="wilpatturow">
-    <div class="wilpattucolumn">
-    <img src="assets/img/wilpattu1.jpg" alt="wilpattu" width="" height="400px">
-    </div>
-    <div class="wilpattucolumn">
-    <img src="assets/img/Monkey , spotted deer at yala srilanka.jpg" alt="monkey" width="" height="400px">
-    </div>
+    <div class="wilpattucolumn" id="20"></div>
+    <div class="wilpattucolumn" id="30"></div>
   </div>
 </div>
 <div class="time">
   <div class="timehead">
-    <h1>Best Time to Visit Wilpattu</h1>
+    <h1 id="timeHead"></h1>
   </div>
-  <p>
-    The best time to visit Wilpattu National Park is from February to June during the dry season. With less water in the ponds, it's easier to spot animals coming out to drink. The peak season for leopards is February and March.
-  </p>
-  <div class="timeimg">
-    <img src="assets/img/time.png" alt="time" width="" height="345px">
-  </div>
-  <p>
-    Luckily, you can visit the park year-round, and prices will be much better outside of the high season. In September, the park is closed for maintenance.
-  </p>
+  <p id="timeDescrip"></p>
+  <div class="timeimg" id="10"></div>
+  <p id="wilpattuEnd"></p>
 </div>
+</main>
+<footer>
+  <p>Subscribe to our newsletter for updates:</p>
+  <form class="newsletter-form" id="newsletterForm">
+    <input
+      class="newsletter-input"
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Your email address"
+      required
+    />
+    <button class="newsletter-button" type="submit">Subscribe</button>
+  </form>
+</footer>
   <section class="footer">
     <div class="social">
       <a href="#"><i class="fab fa-instagram"></i></a>
@@ -126,10 +126,42 @@
       <li>
         <a href="Animals of SL.html">Animals</a>
       </li>
+      <li>
+        <a href="login.html">Login</a>
+      </li>
       <p class="copyright">
         Future Coders @ 2023
       </p>
     </ul>
   </section>
+  <script src="wilpattu.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const newsletterForm = document.getElementById("newsletterForm");
+
+      newsletterForm.addEventListener("submit", function (event) {
+        event.preventDefault(); 
+
+        const email = document.getElementById("email").value;
+
+        
+        saveEmailToLocalStorage(email);
+
+       
+        document.getElementById("email").value = "";
+
+        alert("Thank you for subscribing to our newsletter!");
+      });
+      function saveEmailToLocalStorage(email) {
+        let subscriptions =
+          JSON.parse(localStorage.getItem("subscriptions")) || [];
+        subscriptions.push(email);
+        localStorage.setItem(
+          "subscriptions",
+          JSON.stringify(subscriptions)
+        );
+      }
+    });
+  </script>
 </body>
 </html>

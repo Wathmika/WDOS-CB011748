@@ -68,11 +68,13 @@ body{
   padding: 10px;
 }
 .wilpatturow img{
+  height: 400px;
   border-radius: 20px;
   margin-top: 10px;
   padding: 10px;
   transform: rotate(0);
   transition: transform 0.4s ease-in-out
+  
 }
 .wilpatturow img:hover{
   transform: rotate(10deg);
@@ -95,6 +97,7 @@ body{
   border-radius: 30px;
   display: inline-block;
 }
+
 
 
 
